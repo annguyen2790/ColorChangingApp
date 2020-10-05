@@ -22,6 +22,7 @@ public class PalletteActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pallete_main);
+        setTitle("Pallette Activity");
         /*Initialize objects*/
 
         gridView = findViewById(R.id.GridView_Color);
