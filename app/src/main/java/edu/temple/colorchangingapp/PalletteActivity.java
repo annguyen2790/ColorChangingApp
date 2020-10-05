@@ -2,6 +2,7 @@ package edu.temple.colorchangingapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -28,9 +29,12 @@ public class PalletteActivity extends AppCompatActivity {
         gridView.setAdapter(colorAdapter);
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            Intent intent = new Intent(PalletteActivity.this, CanvasActivity.class);
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(PalletteActivity.this, adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(PalletteActivity.this, adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
+                intent.putExtra("Color", adapterView.getItemAtPosition(i).toString());
+                startActivity(intent);
             }
         });
 
