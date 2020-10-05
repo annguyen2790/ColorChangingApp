@@ -13,7 +13,10 @@ import java.util.ArrayList;
 public class PalletteActivity extends AppCompatActivity {
     GridView gridView;
     ColorAdapter colorAdapter;
-    String [] colors = {"Red", "Blue" ,"Green"};
+    String [] colors = {"Red", "Blue" ,"Yellow",
+                        "Green", "LightGrey", "Magenta",
+                        "White", "Cyan", "LightBlue",
+                        "Pink", "LightGreen", "LightPurple"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +30,7 @@ public class PalletteActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(PalletteActivity.this, "Clicked on Red", Toast.LENGTH_SHORT).show();
+                Toast.makeText(PalletteActivity.this, adapterView.getItemAtPosition(i).toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
