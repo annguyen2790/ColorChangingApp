@@ -25,6 +25,8 @@ public class PalletteActivity extends AppCompatActivity {
         setTitle("Pallette Activity");
         /*Initialize objects*/
 
+        /*Testing*/
+
         gridView = findViewById(R.id.GridView_Color);
         colorAdapter = new ColorAdapter(PalletteActivity.this, colors);
         gridView.setAdapter(colorAdapter);
