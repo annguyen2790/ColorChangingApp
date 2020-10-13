@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Application de changement de couleur</string>
+    <string name="InstructionMessage">Cliquez sur une couleur ci-dessous pour changer le canevas</string>
+    <string name= "PalletteActivity"> Activité de palleteile</string>
+    <string name="CanvasActivity">Activité de canvasa</string>
+    <string-array name="colors_array">
+        <item> Rouge </item>
+        <item> Bleu </item>
+        <item> Jaune </item>
+        <item> Vert </item>
+        <item> Gris clair </item>
+        <item> Magenta </item>
+        <item> Blanc </item>
+        <item> Cyan </item>
+        <item> Bleu clair </item>
+        <item> Rose </item>
+        <item> Vert clair </item>
+        <item> Violet clair </item>
+    </string-array>
+
+
+
+</resources>

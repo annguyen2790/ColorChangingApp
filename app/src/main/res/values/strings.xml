@@ -1,3 +1,20 @@
 <resources>
     <string name="app_name">ColorChangingApp</string>
+    <string name="InstructionMessage">Click A Color Below to Change the Canvas</string>
+    <string name= "PalletteActivity">PalletteActivity</string>
+    <string name="CanvasActivity">CanvasActivity</string>
+    <string-array name="colors_array">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Yellow</item>
+        <item>Green</item>
+        <item>LightGrey</item>
+        <item>Magenta</item>
+        <item>White</item>
+        <item>Cyan</item>
+        <item>LightBlue</item>
+        <item>Pink</item>
+        <item>LightGreen</item>
+        <item>LightPurple</item>
+    </string-array>
 </resources>
