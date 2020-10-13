@@ -23,13 +23,18 @@ public class CanvasActivity extends AppCompatActivity {
         Intent toGet = getIntent();
         String color = toGet.getStringExtra("Color");
         textView.setText(color);
-        if(color.equalsIgnoreCase("Red") || color.equalsIgnoreCase("Rouge")){
+
+        String [] colors = getResources().getStringArray(R.array.colors_array);
+        if(colors == null){
+            textView.setText(R.string.app_name);
+        }
+        if(color.equalsIgnoreCase(colors[0])){
             constraintLayout.setBackgroundColor(Color.RED);
-        }else if(color.equalsIgnoreCase("Blue") || color.equalsIgnoreCase("Bleu")){
+        }else if(color.equalsIgnoreCase(colors[1])){
             constraintLayout.setBackgroundColor(Color.BLUE);
-        }else if(color.equalsIgnoreCase("Yellow") || color.equalsIgnoreCase("Jaune")) {
+        }else if(color.equalsIgnoreCase(colors[2])) {
             constraintLayout.setBackgroundColor(Color.YELLOW);
-        } else if(color.equalsIgnoreCase("Green") || color.equalsIgnoreCase("Vert")) {
+        } else if(color.equalsIgnoreCase(colors[3])) {
             constraintLayout.setBackgroundColor(Color.GREEN);
         }else if(color.equalsIgnoreCase("LightGrey") || color.equalsIgnoreCase("Gris clair")) {
             constraintLayout.setBackgroundColor(Color.LTGRAY);
