@@ -36,21 +36,21 @@ public class CanvasActivity extends AppCompatActivity {
             constraintLayout.setBackgroundColor(Color.YELLOW);
         } else if(color.equalsIgnoreCase(colors[3])) {
             constraintLayout.setBackgroundColor(Color.GREEN);
-        }else if(color.equalsIgnoreCase("LightGrey") || color.equalsIgnoreCase("Gris clair")) {
+        }else if(color.equalsIgnoreCase(colors[4])) {
             constraintLayout.setBackgroundColor(Color.LTGRAY);
-        }else if(color.equalsIgnoreCase("Magenta") || color.equalsIgnoreCase("Magentana")) {
+        }else if(color.equalsIgnoreCase(colors[5])) {
             constraintLayout.setBackgroundColor(Color.MAGENTA);
-        }else if(color.equalsIgnoreCase("White") || color.equalsIgnoreCase("Blanc")) {
+        }else if(color.equalsIgnoreCase(colors[6])) {
             constraintLayout.setBackgroundColor(Color.WHITE);
-        }else if(color.equalsIgnoreCase("Cyan") || color.equalsIgnoreCase("Cyana")) {
+        }else if(color.equalsIgnoreCase(colors[7])) {
             constraintLayout.setBackgroundColor(Color.CYAN);
-        }else if(color.equalsIgnoreCase("LightBlue") || color.equalsIgnoreCase("Bleu clair")) {
+        }else if(color.equalsIgnoreCase(colors[8])){
             constraintLayout.setBackgroundColor(Color.rgb(0, 127, 255));
-        }else if(color.equalsIgnoreCase("Pink") || color.equalsIgnoreCase("Rose")) {
+        }else if(color.equalsIgnoreCase(colors[9])) {
             constraintLayout.setBackgroundColor(Color.rgb(255, 0, 127));
-        }else if(color.equalsIgnoreCase("LightGreen") || color.equalsIgnoreCase("Vert clair")) {
+        }else if(color.equalsIgnoreCase(colors[10])) {
             constraintLayout.setBackgroundColor(Color.rgb(0, 255, 127));
-        }else if(color.equalsIgnoreCase("LightPurple") || color.equalsIgnoreCase("Violet clair")) {
+        }else if(color.equalsIgnoreCase(colors[11])) {
             constraintLayout.setBackgroundColor(Color.rgb(0, 255, 127));
         }else{
             constraintLayout.setBackgroundColor(Color.rgb(0,0,0));
