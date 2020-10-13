@@ -10,8 +10,19 @@
         android:id="@+id/GridView_Color"
         android:layout_width="409dp"
         android:layout_height="354dp"
+        android:layout_marginTop="96dp"
         android:columnWidth="1dp"
         android:numColumns="3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_Instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/InstructionMessage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

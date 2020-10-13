@@ -16,54 +16,40 @@ public class CanvasActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_canvas);
-        setTitle("Canvas Activity");
+        setTitle(R.string.CanvasActivity);
         textView = findViewById(R.id.textView_Color);
         constraintLayout = findViewById(R.id.contrainst_Layout);
 
         Intent toGet = getIntent();
         String color = toGet.getStringExtra("Color");
         textView.setText(color);
-
-        switch (color){
-            case "Red":
-                constraintLayout.setBackgroundColor(Color.RED);
-                break;
-            case "Blue":
-                constraintLayout.setBackgroundColor(Color.BLUE);
-                break;
-            case "Yellow":
-                constraintLayout.setBackgroundColor(Color.YELLOW);
-                break;
-            case "Green":
-                constraintLayout.setBackgroundColor(Color.GREEN);
-                break;
-            case "LightGrey":
-                constraintLayout.setBackgroundColor(Color.LTGRAY);
-                break;
-            case "Magenta":
-                constraintLayout.setBackgroundColor(Color.MAGENTA);
-                break;
-            case "White":
-                constraintLayout.setBackgroundColor(Color.WHITE);
-                break;
-            case "Cyan":
-                constraintLayout.setBackgroundColor(Color.CYAN);
-                break;
-            case "LightBlue":
-                constraintLayout.setBackgroundColor(Color.rgb(0, 127, 255));
-                break;
-            case "Pink":
-                constraintLayout.setBackgroundColor(Color.rgb(255, 0, 127));
-                break;
-            case "LightGreen":
-                constraintLayout.setBackgroundColor(Color.rgb(0, 255, 127));
-                break;
-            case "LightPurple":
-                constraintLayout.setBackgroundColor(Color.rgb(127, 127, 255));
-                break;
-            default:
-                constraintLayout.setBackgroundColor(Color.rgb(0,0,0));
-                textView.setText("There might be something wrong with clicking text view");
+        if(color.equalsIgnoreCase("Red") || color.equalsIgnoreCase("Rouge")){
+            constraintLayout.setBackgroundColor(Color.RED);
+        }else if(color.equalsIgnoreCase("Blue") || color.equalsIgnoreCase("Bleu")){
+            constraintLayout.setBackgroundColor(Color.BLUE);
+        }else if(color.equalsIgnoreCase("Yellow") || color.equalsIgnoreCase("Jaune")) {
+            constraintLayout.setBackgroundColor(Color.YELLOW);
+        } else if(color.equalsIgnoreCase("Green") || color.equalsIgnoreCase("Vert")) {
+            constraintLayout.setBackgroundColor(Color.GREEN);
+        }else if(color.equalsIgnoreCase("LightGrey") || color.equalsIgnoreCase("Gris clair")) {
+            constraintLayout.setBackgroundColor(Color.LTGRAY);
+        }else if(color.equalsIgnoreCase("Magenta") || color.equalsIgnoreCase("Magentana")) {
+            constraintLayout.setBackgroundColor(Color.MAGENTA);
+        }else if(color.equalsIgnoreCase("White") || color.equalsIgnoreCase("Blanc")) {
+            constraintLayout.setBackgroundColor(Color.WHITE);
+        }else if(color.equalsIgnoreCase("Cyan") || color.equalsIgnoreCase("Cyana")) {
+            constraintLayout.setBackgroundColor(Color.CYAN);
+        }else if(color.equalsIgnoreCase("LightBlue") || color.equalsIgnoreCase("Bleu clair")) {
+            constraintLayout.setBackgroundColor(Color.rgb(0, 127, 255));
+        }else if(color.equalsIgnoreCase("Pink") || color.equalsIgnoreCase("Rose")) {
+            constraintLayout.setBackgroundColor(Color.rgb(255, 0, 127));
+        }else if(color.equalsIgnoreCase("LightGreen") || color.equalsIgnoreCase("Vert clair")) {
+            constraintLayout.setBackgroundColor(Color.rgb(0, 255, 127));
+        }else if(color.equalsIgnoreCase("LightPurple") || color.equalsIgnoreCase("Violet clair")) {
+            constraintLayout.setBackgroundColor(Color.rgb(0, 255, 127));
+        }else{
+            constraintLayout.setBackgroundColor(Color.rgb(0,0,0));
+            textView.setText(R.string.app_name);
         }
 
 
