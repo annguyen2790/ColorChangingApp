@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         String [] colours = resources.getStringArray(R.array.colors_array);
         //Create Pallete fragment using instance
         PalletteFragment pf = PalletteFragment.newInstance(colours);
+
+
         getSupportFragmentManager().beginTransaction().add(R.id.container_1, pf).commit();
 
 

@@ -1,15 +1,19 @@
 package edu.temple.colorchangingapp;
 
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.Toast;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,7 +22,7 @@ import android.widget.GridView;
  */
 public class PalletteFragment extends Fragment {
 
-
+    private PalleteListener palleteListener;
     private static final String COLOR_LIST = "colorList";
     String [] colorList;
     View v;
@@ -26,7 +30,9 @@ public class PalletteFragment extends Fragment {
     public PalletteFragment() {
         // Required empty public constructor
     }
-
+    private interface PalleteListener{
+        void onInputPallette(String input);
+    }
     public static PalletteFragment newInstance(String [] colours) {
         PalletteFragment fragment = new PalletteFragment();
         Bundle args = new Bundle();
@@ -51,7 +57,21 @@ public class PalletteFragment extends Fragment {
         }
         ColorAdapter CA = new ColorAdapter(getActivity(), colorList);
         gv.setAdapter(CA);
+        gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String input = adapterView.getItemAtPosition(i).toString();
+                palleteListener.onInputPallette(input);
+                Toast.makeText(getActivity(), input, Toast.LENGTH_SHORT).show();
+            }
+        });
 
         return v;
+    }
+    /*Enforce interface communication with activity*/
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
     }
 }
