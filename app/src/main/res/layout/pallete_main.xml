@@ -20,13 +20,13 @@
         <GridView
             android:id="@+id/gridView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="341dp" />
     </FrameLayout>
 
     <FrameLayout
         android:id="@+id/container_2"
-        android:layout_width="418dp"
-        android:layout_height="731dp"
+        android:layout_width="407dp"
+        android:layout_height="542dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
