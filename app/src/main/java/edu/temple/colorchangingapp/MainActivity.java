@@ -35,7 +35,6 @@ public class MainActivity extends AppCompatActivity implements PalletteFragment.
 
     @Override
     public void onInputPallette(String input) {
-        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
         Resources resources = getResources();
         String [] color = resources.getStringArray(R.array.colors_array);
         TextView textView = canvas.getView().findViewById(R.id.textView);
