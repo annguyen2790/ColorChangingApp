@@ -8,8 +8,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements PalletteFragment.PListener {
     GridView gridView;
     ColorAdapter colorAdapter;
     TextView textViewInstruction;
@@ -27,5 +28,10 @@ public class MainActivity extends AppCompatActivity {
         getSupportFragmentManager().beginTransaction().add(R.id.container_1, pf).commit();
 
 
+    }
+
+    @Override
+    public void onInputPallette(String input) {
+        Toast.makeText(this, input, Toast.LENGTH_SHORT).show();
     }
 }

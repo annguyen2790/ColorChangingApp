@@ -22,7 +22,7 @@ import android.widget.Toast;
  */
 public class PalletteFragment extends Fragment {
 
-    private PalleteListener palleteListener;
+    private PListener parentActivity;
     private static final String COLOR_LIST = "colorList";
     String [] colorList;
     View v;
@@ -30,7 +30,7 @@ public class PalletteFragment extends Fragment {
     public PalletteFragment() {
         // Required empty public constructor
     }
-    private interface PalleteListener{
+    public interface PListener{
         void onInputPallette(String input);
     }
     public static PalletteFragment newInstance(String [] colours) {
@@ -56,22 +56,33 @@ public class PalletteFragment extends Fragment {
             colorList = getArguments().getStringArray(COLOR_LIST);
         }
         ColorAdapter CA = new ColorAdapter(getActivity(), colorList);
-        gv.setAdapter(CA);
+        if(CA != null) {
+            gv.setAdapter(CA);
+        }else{
+            Resources resources = getResources();
+            String [] colours = resources.getStringArray(R.array.colors_array);
+            CA = new ColorAdapter(getActivity(), colours);
+            gv.setAdapter(CA);
+        }
         gv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String input = adapterView.getItemAtPosition(i).toString();
-                palleteListener.onInputPallette(input);
-                Toast.makeText(getActivity(), input, Toast.LENGTH_SHORT).show();
+                parentActivity.onInputPallette(input);
+
             }
         });
 
         return v;
     }
     /*Enforce interface communication with activity*/
-
     @Override
     public void onAttach(@NonNull Context context) {
         super.onAttach(context);
+        if(context instanceof PListener){
+            parentActivity = (PListener) context;
+        }else{
+            throw new RuntimeException("Please implement PalletteListener interface");
+        }
     }
 }
