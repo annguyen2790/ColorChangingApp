@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">ColorChangingApp</string>
     <string name="InstructionMessage">Click A Color Below to Change the Canvas</string>
-    <string name= "PalletteActivity">MainActivity</string>
+    <string name="PalletteActivity">MainActivity</string>
     <string name="CanvasActivity">CanvasActivity</string>
     <string-array name="colors_array">
         <item>Red</item>
@@ -17,4 +17,6 @@
         <item>LightGreen</item>
         <item>LightPurple</item>
     </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

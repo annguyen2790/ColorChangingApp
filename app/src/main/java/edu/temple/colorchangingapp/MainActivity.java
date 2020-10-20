@@ -12,31 +12,18 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     GridView gridView;
     ColorAdapter colorAdapter;
-
-
     TextView textViewInstruction;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pallete_main);
         setTitle(R.string.PalletteActivity);
-
-        /*Initialize objects*/
         Resources resources = getResources();
         String [] colours = resources.getStringArray(R.array.colors_array);
-        /*Testing*/
+        //Create Pallete fragment using instance
+        PalletteFragment pf = PalletteFragment.newInstance(colours);
+        getSupportFragmentManager().beginTransaction().add(R.id.container_1, pf).commit();
 
-        gridView = findViewById(R.id.GridView_Color);
-        colorAdapter = new ColorAdapter(MainActivity.this, colours);
-        gridView.setAdapter(colorAdapter);
-
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-            }
-        });
 
     }
 }
